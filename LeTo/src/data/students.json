@@ -20,7 +20,7 @@
             "Friday"
         ],
         "bio": "Looking for coding buddies to tackle algorithms together!",
-        "photo": "/images/student1.jpg",
+        "photo": "student1.jpg",
         "interests": [
             "Gaming",
             "Hiking",
@@ -48,7 +48,7 @@
             "Saturday"
         ],
         "bio": "Engineering student passionate about sustainable technology.",
-        "photo": "/images/student2.jpg",
+        "photo": "student2.jpg",
         "interests": [
             "3D Printing",
             "Soccer",
@@ -76,7 +76,7 @@
             "Thursday"
         ],
         "bio": "Psychology enthusiast seeking study partners for statistics help.",
-        "photo": "/images/student3.jpg",
+        "photo": "student3.jpg",
         "interests": [
             "Reading",
             "Yoga",
@@ -104,7 +104,7 @@
             "Sunday"
         ],
         "bio": "Future entrepreneur looking for motivated study partners.",
-        "photo": "/images/student4.jpg",
+        "photo": "student4.jpg",
         "interests": [
             "Entrepreneurship",
             "Basketball",
@@ -132,7 +132,7 @@
             "Saturday"
         ],
         "bio": "Biology grad student passionate about environmental research.",
-        "photo": "/images/student5.jpg",
+        "photo": "student5.jpg",
         "interests": [
             "Nature Photography",
             "Climbing",
