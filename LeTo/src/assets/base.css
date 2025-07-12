@@ -1,83 +1,25 @@
-/* Modern mint and teal color palette */
+/* Add Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+/* Enhanced color palette with additional variations */
 :root {
-  /* Your custom palette */
+  /* Your existing palette */
   --mint: #ddffe7;
   --spearmint: #98d7c2;
   --teal-green: #167d7f;
   --teal: #29a0b1;
 
-  /* Generated variations */
-  --mint-mute: #ccebe1;
-  --border-light: #1ca2a5;
-  --border-dark: #0f5758;
+  /* Additional gradient stops */
+  --mint-light: #f0fff4;
+  --teal-dark: #0f5f61;
 
-  /* Dark mode variations */
-  --dark-background: #041919;
-  --dark-background-soft: #1e4f3f;
-  --dark-background-mute: #183f32;
-}
+  /* Animation variables */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
 
-/* Light mode semantic variables */
-:root {
-  --color-background: var(--mint);
-  --color-background-soft: var(--spearmint);
-  --color-background-mute: var(--mint-mute);
-
-  --color-border: var(--border-light);
-  --color-border-hover: var(--border-dark);
-
-  --color-heading: var(--teal-green);
-  --color-text: var(--teal);
-
-  --section-gap: 160px;
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--dark-background);
-    --color-background-soft: var(--dark-background-soft);
-    --color-background-mute: var(--dark-background-mute);
-
-    --color-border: var(--teal);
-    --color-border-hover: var(--border-light);
-
-    --color-heading: var(--mint);
-    --color-text: var(--spearmint);
-  }
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  font-weight: normal;
-}
-
-body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
-  line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Shadows */
+  --shadow-light: 0 2px 10px rgba(22, 125, 127, 0.1);
+  --shadow-medium: 0 4px 20px rgba(22, 125, 127, 0.15);
+  --shadow-heavy: 0 8px 40px rgba(22, 125, 127, 0.2);
 }
