@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <!-- Header -->
-    <header class="app-header">
+<header class="app-header">
   <div class="logo-container">
     <img src="/images/app_logo_no_text.png" alt="LeTo Logo" class="app-logo">
     <div class="text-container">
@@ -9,9 +9,17 @@
       <p class="app-subtitle">Learn Together</p>
     </div>
   </div>
-  <button class="filter-toggle" @click="showFilters = !showFilters">
-    <i class="fas fa-filter"></i>
-  </button>
+  <div class="header-actions">
+    <button class="filter-toggle" @click="showFilters = !showFilters">
+      <i class="fas fa-filter"></i>
+    </button>
+    <button class="competition-toggle" @click="$router.push('/competition')">
+      <i class="fas fa-trophy"></i>
+    </button>
+    <button class="profile-toggle" @click="$router.push('/profile')">
+      <i class="fas fa-user-edit"></i>
+    </button>
+  </div>
 </header>
 
     <!-- Filters Panel -->
@@ -119,9 +127,10 @@
         <span>{{ filteredStudents.length }} students found</span>
       </div>
 
-      <div class="card-stack-wrapper">
+      <!-- Only show card stack wrapper when there are students -->
+      <div class="card-stack-wrapper" v-if="visibleStudents.length > 0">
         <div class="card-stack" ref="cardStack">
-          <transition-group name="card" tag="div" class="card-group">
+          <transition-group name="card" tag="div" class="card-group" :data-direction="swipeDirection">
             <div
               v-for="(student, index) in visibleStudents"
               :key="student.id"
@@ -224,7 +233,7 @@
         </div>
 
         <!-- Action Buttons -->
-        <div class="action-buttons" v-if="visibleStudents.length > 0">
+        <div class="action-buttons">
           <button @click="swipeLeft" class="action-btn reject-btn">
             <i class="fas fa-times"></i>
           </button>
@@ -234,7 +243,7 @@
         </div>
       </div>
 
-      <!-- Empty State -->
+      <!-- Empty State - shown when no students match filters -->
       <div v-if="visibleStudents.length === 0" class="empty-state">
         <i class="fas fa-search"></i>
         <h3>No more students found</h3>
@@ -259,6 +268,7 @@ export default {
       startX: 0,
       currentX: 0,
       imageErrors: new Set(),
+      swipeDirection: 'right', // neue Eigenschaft für die Swipe-Richtung
       filters: {
         studySubject: '',
         learningTopic: '',
@@ -368,10 +378,12 @@ export default {
       this.showFilters = false
     },
     swipeLeft() {
+      this.swipeDirection = 'left'
       this.currentIndex++
       console.log('Swiped left - Not interested')
     },
     swipeRight() {
+      this.swipeDirection = 'right'
       this.currentIndex++
       console.log('Swiped right - Interested!')
     },
@@ -460,6 +472,69 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Header Actions Container */
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Competition Toggle Button */
+.competition-toggle {
+  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
+  color: var(--teal-green);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
+  flex-shrink: 0;
+}
+
+.competition-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
+}
+
+/* Update responsive design for competition button */
+@media (max-width: 480px) {
+  .competition-toggle {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Profile Toggle Button */
+.profile-toggle {
+  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
+  color: var(--teal-green);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
+  flex-shrink: 0;
+}
+
+.profile-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
+}
+
+/* Update responsive design for the header actions */
+@media (max-width: 480px) {
+  .header-actions {
+    gap: 0.5rem;
+  }
+  
+  .profile-toggle {
+    padding: 0.5rem 0.75rem; /* Smaller padding for the profile button */
+  }
 }
 
 /* Header Styles */
@@ -749,7 +824,7 @@ export default {
 .card-stack-wrapper {
   position: relative;
   width: 100%;
-  min-height: 700px;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -758,7 +833,8 @@ export default {
 .card-stack {
   position: relative;
   width: 100%;
-  height: 580px;
+  height: auto;
+  min-height: 580px; /* Add min-height instead of fixed height */
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -1025,6 +1101,16 @@ export default {
   transform: translateX(-50%) scale(0.8) translateY(50px);
 }
 
+.card-group[data-direction="right"] .card-leave-to {
+  opacity: 0;
+  transform: translateX(-50%) scale(1.1) translateX(100px);
+}
+
+.card-group[data-direction="left"] .card-leave-to {
+  opacity: 0;
+  transform: translateX(-50%) scale(1.1) translateX(-100px); /* Negative value to go left */
+}
+
 .card-leave-to {
   opacity: 0;
   transform: translateX(-50%) scale(1.1) translateX(100px);
@@ -1060,11 +1146,12 @@ export default {
   }
   
   .card-stack-wrapper {
-    min-height: 620px;
+    min-height: auto;
   }
   
   .card-stack {
-    height: 500px;
+    height: auto;
+    min-height: 500px;
   }
   
   .card-header {
@@ -1116,11 +1203,12 @@ export default {
   }
   
   .card-stack-wrapper {
-    min-height: 580px;
+    min-height: auto;
   }
   
   .card-stack {
-    height: 460px;
+    height: auto;
+    min-height: 460px;
   }
   
   .card-header {
