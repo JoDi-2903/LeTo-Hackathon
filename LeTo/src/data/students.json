@@ -138,5 +138,565 @@
             "Climbing",
             "Volunteering"
         ]
+    },
+    {
+        "id": 6,
+        "name": "Lukas Wagner",
+        "age": 18,
+        "gender": "m",
+        "study_subject": "Physics",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Quantum Mechanics",
+            "Mathematics",
+            "Programming"
+        ],
+        "learning_style": "Visual",
+        "rating": 3.8,
+        "region": "Stuttgart",
+        "availability": [
+            "Tuesday",
+            "Saturday",
+            "Sunday"
+        ],
+        "bio": "First-year physics student looking for study partners for calculus and programming.",
+        "photo": "student6.jpg",
+        "interests": [
+            "Astronomy",
+            "Video Games",
+            "Hiking"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Emma Bauer",
+        "age": 24,
+        "gender": "w",
+        "study_subject": "Medicine",
+        "study_level": "Master",
+        "learning_topics": [
+            "Anatomy",
+            "Biochemistry",
+            "Medical Ethics"
+        ],
+        "learning_style": "Reading/Writing",
+        "rating": 4.9,
+        "region": "Heidelberg",
+        "availability": [
+            "Monday",
+            "Wednesday",
+            "Friday"
+        ],
+        "bio": "Med student passionate about neurology. Looking for motivated study partners.",
+        "photo": "student7.jpg",
+        "interests": [
+            "Running",
+            "Medical Podcasts",
+            "Cooking"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Felix Hoffmann",
+        "age": 19,
+        "gender": "m",
+        "study_subject": "Computer Science",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Machine Learning",
+            "Web Development",
+            "Mobile Apps"
+        ],
+        "learning_style": "Kinesthetic",
+        "rating": 3.2,
+        "region": "Mannheim",
+        "availability": [
+            "Thursday",
+            "Friday",
+            "Saturday"
+        ],
+        "bio": "Coding enthusiast building my first startup. Let's collaborate on projects!",
+        "photo": "student8.jpg",
+        "interests": [
+            "Startups",
+            "Basketball",
+            "Electronic Music"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Nora Chen",
+        "age": 27,
+        "gender": "d",
+        "study_subject": "Architecture",
+        "study_level": "Master",
+        "learning_topics": [
+            "Urban Design",
+            "Sustainable Architecture",
+            "3D Modeling"
+        ],
+        "learning_style": "Visual",
+        "rating": 4.7,
+        "region": "Stuttgart",
+        "availability": [
+            "Monday",
+            "Tuesday",
+            "Friday"
+        ],
+        "bio": "Architecture grad student focusing on sustainable urban development.",
+        "photo": "student9.jpg",
+        "interests": [
+            "Photography",
+            "Modern Art",
+            "Urban Exploration"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Markus Zimmermann",
+        "age": 21,
+        "gender": "m",
+        "study_subject": "Economics",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Microeconomics",
+            "Finance",
+            "Statistics"
+        ],
+        "learning_style": "Group Discussion",
+        "rating": 2.9,
+        "region": "Karlsruhe",
+        "availability": [
+            "Tuesday",
+            "Wednesday",
+            "Sunday"
+        ],
+        "bio": "Economics student struggling with statistics. Looking for patient study partners.",
+        "photo": "student10.jpg",
+        "interests": [
+            "Stock Market",
+            "Tennis",
+            "Science Fiction"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Hannah Schmidt",
+        "age": 20,
+        "gender": "w",
+        "study_subject": "Law",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Civil Law",
+            "Constitutional Law",
+            "Legal Writing"
+        ],
+        "learning_style": "Reading/Writing",
+        "rating": 4.3,
+        "region": "Heidelberg",
+        "availability": [
+            "Monday",
+            "Thursday",
+            "Saturday"
+        ],
+        "bio": "Law student interested in human rights law. I make great study notes!",
+        "photo": "student11.jpg",
+        "interests": [
+            "Debate Club",
+            "Politics",
+            "Classical Music"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Tobias Meier",
+        "age": 30,
+        "gender": "m",
+        "study_subject": "Philosophy",
+        "study_level": "Master",
+        "learning_topics": [
+            "Ethics",
+            "Metaphysics",
+            "History of Philosophy"
+        ],
+        "learning_style": "Auditory",
+        "rating": 4.0,
+        "region": "Tübingen",
+        "availability": [
+            "Wednesday",
+            "Saturday",
+            "Sunday"
+        ],
+        "bio": "Returning to academia after working for years. Love deep philosophical discussions.",
+        "photo": "student12.jpg",
+        "interests": [
+            "Chess",
+            "Poetry",
+            "Mountain Biking"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Leila Ahmadi",
+        "age": 23,
+        "gender": "w",
+        "study_subject": "Chemistry",
+        "study_level": "Master",
+        "learning_topics": [
+            "Organic Chemistry",
+            "Biochemistry",
+            "Laboratory Methods"
+        ],
+        "learning_style": "Hands-on",
+        "rating": 4.6,
+        "region": "Stuttgart",
+        "availability": [
+            "Monday",
+            "Thursday",
+            "Friday"
+        ],
+        "bio": "Chemistry researcher focused on sustainable materials. Happy to help with lab reports!",
+        "photo": "student13.jpg",
+        "interests": [
+            "Cooking",
+            "Swimming",
+            "Environmental Activism"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Alex Winter",
+        "age": 25,
+        "gender": "d",
+        "study_subject": "Art History",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Modern Art",
+            "Renaissance",
+            "Museum Studies"
+        ],
+        "learning_style": "Visual",
+        "rating": 3.7,
+        "region": "Kirchheim am Neckar",
+        "availability": [
+            "Tuesday",
+            "Wednesday",
+            "Sunday"
+        ],
+        "bio": "Art enthusiast studying while working part-time at a gallery.",
+        "photo": "student14.jpg",
+        "interests": [
+            "Painting",
+            "Film",
+            "Flea Markets"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Sarah Neumann",
+        "age": 19,
+        "gender": "w",
+        "study_subject": "Mathematics",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Linear Algebra",
+            "Calculus",
+            "Discrete Mathematics"
+        ],
+        "learning_style": "Problem Solving",
+        "rating": 4.4,
+        "region": "Karlsruhe",
+        "availability": [
+            "Monday",
+            "Friday",
+            "Saturday"
+        ],
+        "bio": "Math major who loves problem solving and teaching others.",
+        "photo": "student15.jpg",
+        "interests": [
+            "Chess",
+            "Piano",
+            "Baking"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Jan Krause",
+        "age": 28,
+        "gender": "m",
+        "study_subject": "Electrical Engineering",
+        "study_level": "Master",
+        "learning_topics": [
+            "Circuit Design",
+            "Signal Processing",
+            "Embedded Systems"
+        ],
+        "learning_style": "Practical",
+        "rating": 3.9,
+        "region": "Mannheim",
+        "availability": [
+            "Tuesday",
+            "Thursday",
+            "Sunday"
+        ],
+        "bio": "Engineering student with industry experience in robotics.",
+        "photo": "student16.jpg",
+        "interests": [
+            "DIY Electronics",
+            "Cycling",
+            "Science Fiction"
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Maria Santos",
+        "age": 18,
+        "gender": "w",
+        "study_subject": "Linguistics",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Phonetics",
+            "Syntax",
+            "Language Acquisition"
+        ],
+        "learning_style": "Auditory",
+        "rating": 2.8,
+        "region": "Tübingen",
+        "availability": [
+            "Wednesday",
+            "Thursday",
+            "Saturday"
+        ],
+        "bio": "Multilingual freshman excited about language studies. Still figuring things out.",
+        "photo": "student17.jpg",
+        "interests": [
+            "Languages",
+            "Podcasts",
+            "Travel"
+        ]
+    },
+    {
+        "id": 18,
+        "name": "David Kim",
+        "age": 26,
+        "gender": "m",
+        "study_subject": "Music",
+        "study_level": "Master",
+        "learning_topics": [
+            "Music Theory",
+            "Composition",
+            "Music History"
+        ],
+        "learning_style": "Group Discussion",
+        "rating": 4.9,
+        "region": "Heidelberg",
+        "availability": [
+            "Monday",
+            "Wednesday",
+            "Sunday"
+        ],
+        "bio": "Classical pianist studying music theory. Love teaching and collaborating.",
+        "photo": "student18.jpg",
+        "interests": [
+            "Piano",
+            "Concert Going",
+            "Literature"
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Nina Schulz",
+        "age": 22,
+        "gender": "w",
+        "study_subject": "Environmental Science",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Climate Change",
+            "Sustainability",
+            "Field Research Methods"
+        ],
+        "learning_style": "Hands-on",
+        "rating": 4.1,
+        "region": "Kirchheim am Neckar",
+        "availability": [
+            "Tuesday",
+            "Friday",
+            "Saturday"
+        ],
+        "bio": "Environmental activist studying climate impact. Looking for fieldwork buddies.",
+        "photo": "student19.jpg",
+        "interests": [
+            "Hiking",
+            "Gardening",
+            "Documentary Films"
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Omar Farooq",
+        "age": 24,
+        "gender": "m",
+        "study_subject": "Data Science",
+        "study_level": "Master",
+        "learning_topics": [
+            "Machine Learning",
+            "Data Visualization",
+            "Statistical Analysis"
+        ],
+        "learning_style": "Visual",
+        "rating": 4.2,
+        "region": "Stuttgart",
+        "availability": [
+            "Monday",
+            "Thursday",
+            "Sunday"
+        ],
+        "bio": "Data scientist specializing in ML. Looking for hackathon teammates.",
+        "photo": "student20.jpg",
+        "interests": [
+            "Programming",
+            "Chess",
+            "Rock Climbing"
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Lena Becker",
+        "age": 20,
+        "gender": "d",
+        "study_subject": "Sociology",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Social Theory",
+            "Research Methods",
+            "Gender Studies"
+        ],
+        "learning_style": "Group Discussion",
+        "rating": 3.4,
+        "region": "Tübingen",
+        "availability": [
+            "Tuesday",
+            "Wednesday",
+            "Friday"
+        ],
+        "bio": "Sociology student interested in identity and technology. Great at brainstorming.",
+        "photo": "student21.jpg",
+        "interests": [
+            "Activism",
+            "Photography",
+            "Indie Music"
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Thomas Richter",
+        "age": 29,
+        "gender": "m",
+        "study_subject": "History",
+        "study_level": "Master",
+        "learning_topics": [
+            "Medieval History",
+            "German History",
+            "Historical Research"
+        ],
+        "learning_style": "Reading/Writing",
+        "rating": 3.5,
+        "region": "Karlsruhe",
+        "availability": [
+            "Monday",
+            "Thursday",
+            "Saturday"
+        ],
+        "bio": "History teacher studying part-time for my Masters. Good at explaining complex topics.",
+        "photo": "student22.jpg",
+        "interests": [
+            "Museums",
+            "Documentaries",
+            "Cooking"
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Pia Lindner",
+        "age": 21,
+        "gender": "w",
+        "study_subject": "Communication Design",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "UI/UX Design",
+            "Typography",
+            "Visual Communication"
+        ],
+        "learning_style": "Visual",
+        "rating": 4.7,
+        "region": "Mannheim",
+        "availability": [
+            "Tuesday",
+            "Friday",
+            "Sunday"
+        ],
+        "bio": "Creative designer looking for project collaborators and feedback sessions.",
+        "photo": "student23.jpg",
+        "interests": [
+            "Digital Art",
+            "Fashion",
+            "Urban Sketching"
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Robin Schäfer",
+        "age": 18,
+        "gender": "d",
+        "study_subject": "Political Science",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "International Relations",
+            "Political Theory",
+            "European Politics"
+        ],
+        "learning_style": "Auditory",
+        "rating": 2.5,
+        "region": "Heidelberg",
+        "availability": [
+            "Wednesday",
+            "Saturday",
+            "Sunday"
+        ],
+        "bio": "First year political science student with a strong interest in EU politics.",
+        "photo": "student24.jpg",
+        "interests": [
+            "Debate",
+            "News",
+            "Language Exchange"
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Amelie Huber",
+        "age": 30,
+        "gender": "w",
+        "study_subject": "Nutrition Science",
+        "study_level": "Master",
+        "learning_topics": [
+            "Dietetics",
+            "Biochemistry",
+            "Public Health"
+        ],
+        "learning_style": "Practical",
+        "rating": 5.0,
+        "region": "Kirchheim am Neckar",
+        "availability": [
+            "Monday",
+            "Tuesday",
+            "Thursday"
+        ],
+        "bio": "Nutritionist returning to academia. Happy to exchange knowledge over coffee!",
+        "photo": "student25.jpg",
+        "interests": [
+            "Cooking",
+            "Yoga",
+            "Sustainable Food"
+        ]
     }
 ]

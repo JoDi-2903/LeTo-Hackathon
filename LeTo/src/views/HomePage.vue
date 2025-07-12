@@ -2,14 +2,17 @@
   <div class="home-page">
     <!-- Header -->
     <header class="app-header">
-      <div class="logo-container">
-        <h1 class="app-title">LeTo</h1>
-        <p class="app-subtitle">Learn Together</p>
-      </div>
-      <button class="filter-toggle" @click="showFilters = !showFilters">
-        <i class="fas fa-filter"></i>
-      </button>
-    </header>
+  <div class="logo-container">
+    <img src="/images/app_logo_no_text.png" alt="LeTo Logo" class="app-logo">
+    <div class="text-container">
+      <h1 class="app-title">LeTo</h1>
+      <p class="app-subtitle">Learn Together</p>
+    </div>
+  </div>
+  <button class="filter-toggle" @click="showFilters = !showFilters">
+    <i class="fas fa-filter"></i>
+  </button>
+</header>
 
     <!-- Filters Panel -->
     <transition name="slide-down">
@@ -468,10 +471,53 @@ export default {
   margin-bottom: 1rem;
   width: 100%;
   max-width: 1200px;
+  flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .logo-container {
-  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 1;
+  min-width: 0; /* Allow container to shrink below content size if needed */
+}
+
+.app-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.text-container {
+  min-width: 0; /* Allow text to shrink if needed */
+}
+
+/* Update responsive design for the header */
+@media (max-width: 480px) {
+  .app-header {
+    flex-direction: row; /* Keep as row, don't change to column */
+    gap: 0.5rem;
+  }
+  
+  .logo-container {
+    gap: 0.5rem;
+  }
+  
+  .app-logo {
+    height: 40px; /* Smaller logo on mobile */
+  }
+  
+  .app-title {
+    font-size: 1.5rem; /* Smaller title on mobile */
+  }
+  
+  .app-subtitle {
+    font-size: 0.8rem; /* Smaller subtitle on mobile */
+  }
+  
+  .filter-toggle {
+    padding: 0.5rem 0.75rem; /* Smaller padding for the filter button */
+  }
 }
 
 .app-title {
