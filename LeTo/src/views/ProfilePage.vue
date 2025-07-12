@@ -191,7 +191,7 @@ export default {
     updateProfile() {
       try {
         if (!this.validateEmail()) {
-          this.loginError = 'Please use a valid university email address.';
+          toast.error('Please use a valid university email address.')
           return;
         }
         this.loginError = '';
