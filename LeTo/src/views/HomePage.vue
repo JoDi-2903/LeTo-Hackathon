@@ -127,7 +127,8 @@
         <span>{{ filteredStudents.length }} students found</span>
       </div>
 
-      <div class="card-stack-wrapper">
+      <!-- Only show card stack wrapper when there are students -->
+      <div class="card-stack-wrapper" v-if="visibleStudents.length > 0">
         <div class="card-stack" ref="cardStack">
           <transition-group name="card" tag="div" class="card-group">
             <div
@@ -232,7 +233,7 @@
         </div>
 
         <!-- Action Buttons -->
-        <div class="action-buttons" v-if="visibleStudents.length > 0">
+        <div class="action-buttons">
           <button @click="swipeLeft" class="action-btn reject-btn">
             <i class="fas fa-times"></i>
           </button>
@@ -242,7 +243,7 @@
         </div>
       </div>
 
-      <!-- Empty State -->
+      <!-- Empty State - shown when no students match filters -->
       <div v-if="visibleStudents.length === 0" class="empty-state">
         <i class="fas fa-search"></i>
         <h3>No more students found</h3>
