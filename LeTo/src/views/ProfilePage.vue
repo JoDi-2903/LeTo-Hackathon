@@ -1,3 +1,4 @@
+
 <template>
   <div class="profile-page">
     <!-- Header -->
@@ -31,15 +32,115 @@
               id="name" 
               v-model="profile.name" 
               placeholder="Enter your name"
-              required
+              required 
             >
           </div>
+          <div class="form-group">
+            <label for="email">
+              <i class="fas fa-envelope"></i> Email
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              v-model="profile.email" 
+              placeholder="Enter your university email"
+              required @input= "loginError = ''"
+            >
+          </div>
+          <div class="form-group">
+            <label for="yearBranch">
+              <i class="fas fa-graduation-cap"></i> Year/Branch
+            </label>
+            <input 
+              type="text" 
+              id="yearBranch" 
+              v-model="profile.yearBranch" 
+              placeholder="e.g. 2nd Year, Computer Science"
+            >
+          </div>
+          <div class="form-group">
+            <label for="bio">
+              <i class="fas fa-info-circle"></i> Short Bio
+            </label>
+            <textarea 
+              id="bio" 
+              v-model="profile.bio" 
+              rows="5"
+              style="width: 100%;"
+              placeholder="Tell us about yourself"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="photo">
+              <i class="fas fa-image"></i> Profile Picture
+            </label>
+            <input 
+              type="file" 
+              id="photo"
+              accept="image/*"
+              @change="onPhotoChange"
+            >
+            <img
+              v-if="profile.photo"
+              :src="profile.photo"
+              alt="Profile Picture"
+              class="profile-picture"
+            />
+          </div>
           
-          <div class="form-actions">
+      <div class="form-group">
+        <label>
+          <i class="fas fa-star"></i> Interests
+        </label>
+        <div style="margin-bottom: 10px;">
+          <input
+            v-model="newInterest"
+            @keyup.enter="addCustomInterest"
+            placeholder="Add custom interest..."
+            style="width: 70%; padding: 0.5rem; border-radius: 6px; border: 1px solid #ccc;"
+          />
+          <button type="button" @click="addCustomInterest" style="padding: 0.5rem 1rem; border-radius: 6px; border: none; background: var(--teal-green); color: white; margin-left: 8px;">
+            Add
+          </button>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+          <span
+            v-for="(interest, idx) in suggestedInterests"
+            :key="'suggested-' + idx"
+            @click="toggleInterest(interest)"
+            :style="{
+              background: profile.interests.includes(interest) ? 'var(--teal-green)' : '#f0f0f0',
+              color: profile.interests.includes(interest) ? 'white' : '#222',
+              borderRadius: '16px',
+              padding: '6px 14px',
+              cursor: 'pointer',
+              fontSize: '14px'
+            }"
+          >
+            {{ interest }}
+          </span>
+        </div>
+        <div v-if="profile.interests.length > 0" style="margin-top: 8px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span
+              v-for="(interest, idx) in profile.interests"
+              :key="'selected-' + idx"
+              style="background: var(--teal-green); color: white; border-radius: 16px; padding: 6px 14px; font-size: 14px; display: flex; align-items: center;"
+            >
+              {{ interest }}
+              <span @click="removeInterest(interest)" style="margin-left: 8px; cursor: pointer; font-weight: bold;">×</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="form-actions">
             <button type="submit" class="btn-primary">
               Update Profile
             </button>
           </div>
+          <div v-if="loginError" class="error-message">
+          {{ loginError }}
+        </div>
         </form>
       </div>
     </div>
@@ -47,23 +148,90 @@
 </template>
 
 <script>
+const UNIVERSITY_DOMAINS = ['university.edu', 'college.edu'];
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+import { useToast } from 'vue-toastification'
+const toast = useToast()
+
+
 export default {
   name: 'ProfilePage',
   data() {
     return {
       profile: {
-        name: ''
-      }
+         name: '',
+        email: '',
+        yearBranch: '',
+        bio: '',
+        photo: '',
+        interests:[]
+      },
+       suggestedInterests: [
+      'Machine Learning',
+      'Web Development',
+      'Data Science',
+      'Cybersecurity',
+      'Cloud Computing',
+      'Mathematics',
+      'Physics',
+      'Biology',
+      'Economics'
+    ],
+      loginError: ''
     }
   },
+
   methods: {
+    
+    validateEmail() {
+      if (!emailRegex.test(this.profile.email)) return false;
+      const domain = this.profile.email.split('@')[1].trim().toLowerCase();
+      return UNIVERSITY_DOMAINS.includes(domain);
+    },
     updateProfile() {
-      // ToDo: Send data to backend API
-      console.log('Profile updated:', this.profile)
-      alert('Profile updated successfully!')
+      try {
+        if (!this.validateEmail()) {
+          this.loginError = 'Please use a valid university email address.';
+          return;
+        }
+        this.loginError = '';
+        // ...rest of your logic
+        console.log('Profile updated:', this.profile);
+        //alert('Profile updated successfully!');
+        toast.success('Profile updated successfully!')
+      } catch (err) {
+        toast.error('An unexpected error occurred.')
+        //this.loginError = 'An unexpected error occurred.';
+        console.error(err);
+      }
+      },
+    toggleInterest(interest) {
+    const idx = this.profile.interests.indexOf(interest);
+    if (idx === -1) {
+      this.profile.interests.push(interest);
+    } else {
+      this.profile.interests.splice(idx, 1);
+    }
+  },
+  addCustomInterest() {
+    const trimmed = this.newInterest.trim();
+    if (trimmed && !this.profile.interests.includes(trimmed)) {
+      this.profile.interests.push(trimmed);
+      if (!this.suggestedInterests.includes(trimmed)) {
+        this.suggestedInterests.push(trimmed);
+      }
+      this.newInterest = '';
+    }
+  },
+  removeInterest(interest) {
+    const idx = this.profile.interests.indexOf(interest);
+    if (idx !== -1) {
+      this.profile.interests.splice(idx, 1);
     }
   }
+  }
 }
+
 </script>
 
 <style scoped>
@@ -285,5 +453,14 @@ export default {
   .form-actions {
     margin-top: 1.5rem;
   }
+  .error-message {
+  color: #c0392b;
+  background: #c0392b;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
 }
 </style>
