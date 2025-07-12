@@ -1,52 +1,49 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* Modern mint and teal color palette */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  /* Your custom palette */
+  --mint: #ddffe7;
+  --spearmint: #98d7c2;
+  --teal-green: #167d7f;
+  --teal: #29a0b1;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  /* Generated variations */
+  --mint-mute: #ccebe1;
+  --border-light: #1ca2a5;
+  --border-dark: #0f5758;
 
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  /* Dark mode variations */
+  --dark-background: #041919;
+  --dark-background-soft: #1e4f3f;
+  --dark-background-mute: #183f32;
 }
 
-/* semantic color variables for this project */
+/* Light mode semantic variables */
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  --color-background: var(--mint);
+  --color-background-soft: var(--spearmint);
+  --color-background-mute: var(--mint-mute);
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+  --color-border: var(--border-light);
+  --color-border-hover: var(--border-dark);
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --color-heading: var(--teal-green);
+  --color-text: var(--teal);
 
   --section-gap: 160px;
 }
 
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+    --color-background: var(--dark-background);
+    --color-background-soft: var(--dark-background-soft);
+    --color-background-mute: var(--dark-background-mute);
 
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
+    --color-border: var(--teal);
+    --color-border-hover: var(--border-light);
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
+    --color-heading: var(--mint);
+    --color-text: var(--spearmint);
   }
 }
 
