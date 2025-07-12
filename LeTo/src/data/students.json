@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "name": "Anna Müller",
+        "age": 20,
+        "gender": "w",
+        "study_subject": "Computer Science",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Algorithms",
+            "Data Structures",
+            "Web Development"
+        ],
+        "learning_style": "Visual",
+        "rating": 4.5,
+        "region": "Kirchheim am Neckar",
+        "availability": [
+            "Monday",
+            "Wednesday",
+            "Friday"
+        ],
+        "bio": "Looking for coding buddies to tackle algorithms together!",
+        "photo": "/images/student1.jpg",
+        "interests": [
+            "Gaming",
+            "Hiking",
+            "Coffee"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Maximilian Schmidt",
+        "age": 22,
+        "gender": "m",
+        "study_subject": "Mechanical Engineering",
+        "study_level": "Master",
+        "learning_topics": [
+            "Thermodynamics",
+            "Fluid Mechanics",
+            "CAD Design"
+        ],
+        "learning_style": "Hands-on",
+        "rating": 4.0,
+        "region": "Stuttgart",
+        "availability": [
+            "Tuesday",
+            "Thursday",
+            "Saturday"
+        ],
+        "bio": "Engineering student passionate about sustainable technology.",
+        "photo": "/images/student2.jpg",
+        "interests": [
+            "3D Printing",
+            "Soccer",
+            "Tech Podcasts"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Lea Fischer",
+        "age": 19,
+        "gender": "w",
+        "study_subject": "Psychology",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Cognitive Psychology",
+            "Statistics",
+            "Research Methods"
+        ],
+        "learning_style": "Auditory",
+        "rating": 5.0,
+        "region": "Heidelberg",
+        "availability": [
+            "Monday",
+            "Tuesday",
+            "Thursday"
+        ],
+        "bio": "Psychology enthusiast seeking study partners for statistics help.",
+        "photo": "/images/student3.jpg",
+        "interests": [
+            "Reading",
+            "Yoga",
+            "Board Games"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Jonas Weber",
+        "age": 21,
+        "gender": "m",
+        "study_subject": "Business Administration",
+        "study_level": "Bachelor",
+        "learning_topics": [
+            "Marketing",
+            "Finance",
+            "Business Strategy"
+        ],
+        "learning_style": "Group Discussion",
+        "rating": 3.5,
+        "region": "Mannheim",
+        "availability": [
+            "Wednesday",
+            "Friday",
+            "Sunday"
+        ],
+        "bio": "Future entrepreneur looking for motivated study partners.",
+        "photo": "/images/student4.jpg",
+        "interests": [
+            "Entrepreneurship",
+            "Basketball",
+            "Networking"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Sophie Klein",
+        "age": 23,
+        "gender": "d",
+        "study_subject": "Biology",
+        "study_level": "Master",
+        "learning_topics": [
+            "Genetics",
+            "Ecology",
+            "Lab Techniques"
+        ],
+        "learning_style": "Practical",
+        "rating": 4.8,
+        "region": "Karlsruhe",
+        "availability": [
+            "Monday",
+            "Wednesday",
+            "Saturday"
+        ],
+        "bio": "Biology grad student passionate about environmental research.",
+        "photo": "/images/student5.jpg",
+        "interests": [
+            "Nature Photography",
+            "Climbing",
+            "Volunteering"
+        ]
+    }
+]
