@@ -10,9 +10,6 @@
     </div>
   </div>
   <div class="header-actions">
-    <button class="filter-toggle" @click="showFilters = !showFilters">
-      <i class="fas fa-filter"></i>
-    </button>
     <button class="courses-toggle" @click="$router.push('/groups-courses')">
       <i class="fas fa-book-open"></i>
     </button>
@@ -254,6 +251,10 @@
         <button @click="resetFilters" class="btn-primary">Reset Filters</button>
       </div>
     </div>
+  <!-- Add floating action button at the bottom of the page -->
+    <button class="filter-fab" @click="showFilters = !showFilters">
+      <i class="fas fa-filter"></i>
+    </button>
   </div>
 </template>
 
@@ -596,6 +597,32 @@ export default {
   min-width: 0; /* Allow text to shrink if needed */
 }
 
+/* Floating Action Button (FAB) for filters */
+.filter-fab {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: linear-gradient(135deg, var(--teal-green), var(--teal));
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.filter-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.6);
+}
+
 /* Update responsive design for the header */
 @media (max-width: 480px) {
   .app-header {
@@ -619,8 +646,12 @@ export default {
     font-size: 0.8rem; /* Smaller subtitle on mobile */
   }
   
-  .filter-toggle {
-    padding: 0.5rem 0.75rem; /* Smaller padding for the filter button */
+  .filter-fab {
+    bottom: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
   }
 }
 
@@ -640,24 +671,6 @@ export default {
   color: var(--teal);
   margin: 0;
   font-weight: 300;
-}
-
-.filter-toggle {
-  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
-  color: var(--teal-green);
-  border: none;
-  border-radius: 12px;
-  padding: 0.75rem 1rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
-  flex-shrink: 0;
-}
-
-.filter-toggle:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
 }
 
 /* Filters Panel */
@@ -1207,14 +1220,24 @@ export default {
     padding: 0.5rem;
   }
   
+  /* Keep header as row rather than column */
   .app-header {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: space-between;
   }
   
   .app-title {
     font-size: 1.8rem;
+  }
+  
+  /* Position FAB higher in viewport for better accessibility */
+  .filter-fab {
+    bottom: 5rem;  /* Position higher from bottom */
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
   }
   
   .checkbox-group {
