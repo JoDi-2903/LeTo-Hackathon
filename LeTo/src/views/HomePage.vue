@@ -130,7 +130,7 @@
       <!-- Only show card stack wrapper when there are students -->
       <div class="card-stack-wrapper" v-if="visibleStudents.length > 0">
         <div class="card-stack" ref="cardStack">
-          <transition-group name="card" tag="div" class="card-group">
+          <transition-group name="card" tag="div" class="card-group" :data-direction="swipeDirection">
             <div
               v-for="(student, index) in visibleStudents"
               :key="student.id"
@@ -268,6 +268,7 @@ export default {
       startX: 0,
       currentX: 0,
       imageErrors: new Set(),
+      swipeDirection: 'right', // neue Eigenschaft für die Swipe-Richtung
       filters: {
         studySubject: '',
         learningTopic: '',
@@ -377,10 +378,12 @@ export default {
       this.showFilters = false
     },
     swipeLeft() {
+      this.swipeDirection = 'left'
       this.currentIndex++
       console.log('Swiped left - Not interested')
     },
     swipeRight() {
+      this.swipeDirection = 'right'
       this.currentIndex++
       console.log('Swiped right - Interested!')
     },
@@ -1095,6 +1098,16 @@ export default {
 .card-enter-from {
   opacity: 0;
   transform: translateX(-50%) scale(0.8) translateY(50px);
+}
+
+.card-group[data-direction="right"] .card-leave-to {
+  opacity: 0;
+  transform: translateX(-50%) scale(1.1) translateX(100px);
+}
+
+.card-group[data-direction="left"] .card-leave-to {
+  opacity: 0;
+  transform: translateX(-50%) scale(1.1) translateX(-100px); /* Negative value to go left */
 }
 
 .card-leave-to {
