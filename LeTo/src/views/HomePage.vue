@@ -1,7 +1,7 @@
 <template>
   <div class="home-page">
     <!-- Header -->
-    <header class="app-header">
+<header class="app-header">
   <div class="logo-container">
     <img src="/images/app_logo_no_text.png" alt="LeTo Logo" class="app-logo">
     <div class="text-container">
@@ -9,9 +9,14 @@
       <p class="app-subtitle">Learn Together</p>
     </div>
   </div>
-  <button class="filter-toggle" @click="showFilters = !showFilters">
-    <i class="fas fa-filter"></i>
-  </button>
+  <div class="header-actions">
+    <button class="filter-toggle" @click="showFilters = !showFilters">
+      <i class="fas fa-filter"></i>
+    </button>
+    <button class="profile-toggle" @click="$router.push('/profile')">
+      <i class="fas fa-user-edit"></i>
+    </button>
+  </div>
 </header>
 
     <!-- Filters Panel -->
@@ -460,6 +465,43 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Header Actions Container */
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Profile Toggle Button */
+.profile-toggle {
+  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
+  color: var(--teal-green);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
+  flex-shrink: 0;
+}
+
+.profile-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
+}
+
+/* Update responsive design for the header actions */
+@media (max-width: 480px) {
+  .header-actions {
+    gap: 0.5rem;
+  }
+  
+  .profile-toggle {
+    padding: 0.5rem 0.75rem; /* Smaller padding for the profile button */
+  }
 }
 
 /* Header Styles */
