@@ -310,7 +310,7 @@ export default {
 .gamification-page {
   min-height: 100vh;
   background: linear-gradient(135deg, var(--mint) 0%, var(--spearmint) 100%);
-  padding: 1rem;
+  padding: 1rem 1rem 3rem; /* Increased bottom padding */
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -399,6 +399,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-bottom: 2rem; /* Added bottom padding */
 }
 
 .gamification-card {
@@ -679,6 +680,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1rem;
+  margin-bottom: 1rem; /* Added bottom margin */
 }
 
 .achievement-item {
@@ -750,17 +752,10 @@ export default {
   color: var(--teal-dark);
 }
 
-/* Responsive Design */
+/* Add responsive padding for smaller screens */
 @media (max-width: 768px) {
-  .streak-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-  }
-  
-  .achievements-grid {
-    grid-template-columns: 1fr;
+  .gamification-page {
+    padding-bottom: 10rem; /* More padding on mobile */
   }
 }
 

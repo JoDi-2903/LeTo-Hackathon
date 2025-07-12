@@ -824,7 +824,7 @@ export default {
 .card-stack-wrapper {
   position: relative;
   width: 100%;
-  min-height: 700px;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -833,7 +833,8 @@ export default {
 .card-stack {
   position: relative;
   width: 100%;
-  height: 580px;
+  height: auto;
+  min-height: 580px; /* Add min-height instead of fixed height */
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -1145,11 +1146,12 @@ export default {
   }
   
   .card-stack-wrapper {
-    min-height: 620px;
+    min-height: auto;
   }
   
   .card-stack {
-    height: 500px;
+    height: auto;
+    min-height: 500px;
   }
   
   .card-header {
@@ -1201,11 +1203,12 @@ export default {
   }
   
   .card-stack-wrapper {
-    min-height: 580px;
+    min-height: auto;
   }
   
   .card-stack {
-    height: 460px;
+    height: auto;
+    min-height: 460px;
   }
   
   .card-header {
