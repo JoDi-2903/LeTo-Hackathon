@@ -13,6 +13,9 @@
     <button class="filter-toggle" @click="showFilters = !showFilters">
       <i class="fas fa-filter"></i>
     </button>
+    <button class="competition-toggle" @click="$router.push('/competition')">
+      <i class="fas fa-trophy"></i>
+    </button>
     <button class="profile-toggle" @click="$router.push('/profile')">
       <i class="fas fa-user-edit"></i>
     </button>
@@ -472,6 +475,32 @@ export default {
   display: flex;
   gap: 0.75rem;
   align-items: center;
+}
+
+/* Competition Toggle Button */
+.competition-toggle {
+  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
+  color: var(--teal-green);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
+  flex-shrink: 0;
+}
+
+.competition-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
+}
+
+/* Update responsive design for competition button */
+@media (max-width: 480px) {
+  .competition-toggle {
+    padding: 0.5rem 0.75rem;
+  }
 }
 
 /* Profile Toggle Button */

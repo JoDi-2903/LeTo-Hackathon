@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../views/HomePage.vue'
 import ProfilePage from '../views/ProfilePage.vue'
+import GamificationPage from '../views/GamificationPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: ProfilePage,
+    },
+    {
+      path: '/competition',
+      name: 'competition',
+      component: GamificationPage,
     },
     // Add additional routes as needed
   ]
