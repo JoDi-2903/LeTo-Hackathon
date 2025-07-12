@@ -486,21 +486,21 @@ export default {
 
 /* Competition Toggle Button */
 .competition-toggle {
-  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
-  color: var(--teal-green);
+  background: linear-gradient(135deg, var(--teal-green), var(--teal));
+  color: white;
   border: none;
   border-radius: 12px;
   padding: 0.75rem 1rem;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.3);
   flex-shrink: 0;
 }
 
 .competition-toggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.4);
 }
 
 /* Update responsive design for competition button */
@@ -512,21 +512,21 @@ export default {
 
 /* Courses Toggle Button */
 .courses-toggle {
-  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
-  color: var(--teal-green);
+  background: linear-gradient(135deg, var(--teal-green), var(--teal));
+  color: white;
   border: none;
   border-radius: 12px;
   padding: 0.75rem 1rem;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.3);
   flex-shrink: 0;
 }
 
 .courses-toggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.4);
 }
 
 /* Update responsive design for courses button */
@@ -538,21 +538,21 @@ export default {
 
 /* Profile Toggle Button */
 .profile-toggle {
-  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
-  color: var(--teal-green);
+  background: linear-gradient(135deg, var(--teal-green), var(--teal));
+  color: white;
   border: none;
   border-radius: 12px;
   padding: 0.75rem 1rem;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.3);
   flex-shrink: 0;
 }
 
 .profile-toggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.4);
 }
 
 /* Update responsive design for the header actions */
@@ -643,21 +643,21 @@ export default {
 }
 
 .filter-toggle {
-  background: linear-gradient(135deg, var(--teal-green), var(--teal));
-  color: white;
+  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
+  color: var(--teal-green);
   border: none;
   border-radius: 12px;
   padding: 0.75rem 1rem;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.3);
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
   flex-shrink: 0;
 }
 
 .filter-toggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.4);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
 }
 
 /* Filters Panel */

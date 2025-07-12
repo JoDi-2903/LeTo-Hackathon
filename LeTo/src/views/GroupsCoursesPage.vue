@@ -452,21 +452,21 @@ export default {
 }
 
 .home-toggle {
-  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
-  color: var(--teal-green);
+  background: linear-gradient(135deg, var(--teal-green), var(--teal));
+  color: white;
   border: none;
   border-radius: 12px;
   padding: 0.75rem 1rem;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.3);
   flex-shrink: 0;
 }
 
 .home-toggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.4);
 }
 
 /* Main Content Container */
