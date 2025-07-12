@@ -41,9 +41,26 @@
           <div class="filter-group">
             <label><i class="fas fa-calendar"></i> Age Range</label>
             <div class="range-container">
-              <input type="range" v-model="filters.minAge" min="18" max="30" class="range-slider">
-              <span>{{ filters.minAge }} - {{ filters.maxAge }}</span>
-              <input type="range" v-model="filters.maxAge" min="18" max="30" class="range-slider">
+              <div class="dual-slider-container">
+                <div class="slider-track"></div>
+                <input 
+                  type="range" 
+                  v-model="filters.minAge" 
+                  min="18" 
+                  max="30" 
+                  class="range-slider min-slider" 
+                  @input="validateAgeRange('min')"
+                >
+                <input 
+                  type="range" 
+                  v-model="filters.maxAge" 
+                  min="18" 
+                  max="30" 
+                  class="range-slider max-slider"
+                  @input="validateAgeRange('max')"
+                >
+              </div>
+              <div class="range-values">{{ filters.minAge }} - {{ filters.maxAge }}</div>
             </div>
           </div>
 
@@ -301,6 +318,13 @@ export default {
     }
   },
   methods: {
+    validateAgeRange(type) {
+      if (type === 'min' && parseInt(this.filters.minAge) > parseInt(this.filters.maxAge)) {
+        this.filters.minAge = this.filters.maxAge;
+      } else if (type === 'max' && parseInt(this.filters.maxAge) < parseInt(this.filters.minAge)) {
+        this.filters.maxAge = this.filters.minAge;
+      }
+    },
     getImageUrl(imageName) {
       if (!imageName || this.imageErrors.has(imageName)) {
         return null
@@ -535,20 +559,40 @@ export default {
   border-color: var(--teal);
 }
 
+/* Dual-thumb Slider Styles */
 .range-container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
-.range-slider {
-  flex: 1;
+.dual-slider-container {
+  position: relative;
+  height: 6px;
+  margin: 20px 0;
+}
+
+.slider-track {
+  position: absolute;
+  width: 100%;
   height: 6px;
   background: var(--spearmint);
   border-radius: 3px;
-  outline: none;
+}
+
+/* Fix for the dual-thumb slider to make both thumbs accessible */
+.range-slider {
   -webkit-appearance: none;
   appearance: none;
+  width: 100%;
+  background: transparent;
+  position: absolute;
+  height: 6px;
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  pointer-events: none; /* Add this to prevent range itself from capturing events */
 }
 
 .range-slider::-webkit-slider-thumb {
@@ -559,6 +603,9 @@ export default {
   background: var(--teal-green);
   border-radius: 50%;
   cursor: pointer;
+  border: none;
+  position: relative;
+  pointer-events: auto; /* Make sure the thumb still captures events */
 }
 
 .range-slider::-moz-range-thumb {
@@ -568,6 +615,21 @@ export default {
   border-radius: 50%;
   cursor: pointer;
   border: none;
+  position: relative;
+  pointer-events: auto; /* Make sure the thumb still captures events */
+}
+
+/* Adjust the min slider to cover only the left half and max slider to cover the right half */
+.min-slider {
+  z-index: 2;
+  width: 50%;
+  left: 0;
+}
+
+.max-slider {
+  z-index: 2;
+  width: 50%;
+  left: 50%;
 }
 
 .checkbox-group {
