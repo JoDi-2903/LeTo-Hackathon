@@ -392,6 +392,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-y: auto; /* Added to ensure scrolling works */
+  position: relative; /* Changed to relative */
 }
 
 /* Header Styles - Kept from original design */
@@ -472,6 +474,8 @@ export default {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  overflow-y: visible; /* Ensure content can expand */
+  flex: 1; /* Allow container to grow */
 }
 
 /* Search and Filter Section */
@@ -545,10 +549,12 @@ export default {
 /* Tab Content */
 .tab-content {
   width: 100%;
+  overflow: visible; /* Ensure content isn't cut off */
 }
 
 .section {
   margin-bottom: 3rem;
+  overflow: visible; /* Ensure content isn't cut off */
 }
 
 .section-title {
@@ -865,6 +871,7 @@ export default {
     overflow-x: auto;
     padding-bottom: 0.5rem;
     flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch; /* Improved mobile scrolling */
   }
   
   .filter-button {
@@ -873,9 +880,21 @@ export default {
 }
 
 @media (max-width: 480px) {
+  /* Fixed mobile view */
+  body, html {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    max-width: 100%;
+  }
+  
+  .groups-courses-page {
+    padding: 0.5rem; /* Reduced padding to maximize space */
+    min-height: auto; /* Allow content to determine height */
+  }
+  
   .app-header {
     flex-direction: row;
     gap: 0.5rem;
+    margin-bottom: 1rem; /* Reduced margin */
   }
   
   .logo-container {
@@ -888,7 +907,7 @@ export default {
   
   .app-title {
     font-size: 1.5rem;
-  }
+    }
   
   .app-subtitle {
     font-size: 0.8rem;
@@ -908,6 +927,31 @@ export default {
   
   .section-title {
     font-size: 1.5rem;
+  }
+  
+  /* Improved card sizing for mobile */
+  .group-card, .course-card {
+    padding: 1rem; /* Reduced padding */
+  }
+  
+  /* Ensure platform cards fit properly */
+  .platform-card {
+    padding: 1rem;
+  }
+  
+  .platform-logo {
+    width: 100px;
+    height: 50px;
+  }
+  
+  /* Better handling of buttons on small screens */
+  .card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .action-button {
+    width: 100%;
   }
 }
 </style>

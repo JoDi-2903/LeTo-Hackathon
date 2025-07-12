@@ -13,6 +13,9 @@
     <button class="filter-toggle" @click="showFilters = !showFilters">
       <i class="fas fa-filter"></i>
     </button>
+    <button class="courses-toggle" @click="$router.push('/groups-courses')">
+      <i class="fas fa-book-open"></i>
+    </button>
     <button class="competition-toggle" @click="$router.push('/competition')">
       <i class="fas fa-trophy"></i>
     </button>
@@ -503,6 +506,32 @@ export default {
 /* Update responsive design for competition button */
 @media (max-width: 480px) {
   .competition-toggle {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Courses Toggle Button */
+.courses-toggle {
+  background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
+  color: var(--teal-green);
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(22, 125, 127, 0.15);
+  flex-shrink: 0;
+}
+
+.courses-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 125, 127, 0.25);
+}
+
+/* Update responsive design for courses button */
+@media (max-width: 480px) {
+  .courses-toggle {
     padding: 0.5rem 0.75rem;
   }
 }
