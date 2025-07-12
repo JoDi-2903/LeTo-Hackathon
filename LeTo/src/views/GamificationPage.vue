@@ -361,7 +361,7 @@ export default {
 
 .app-subtitle {
   font-size: 1rem;
-  color: var(--teal);
+  color: var(--teal-green);
   margin: 0;
   font-weight: 300;
 }
@@ -375,7 +375,7 @@ export default {
 
 .home-toggle {
   background: linear-gradient(135deg, var(--spearmint), var(--mint-light));
-  color: var(--teal-green);
+  color: var(--teal-dark);
   border: none;
   border-radius: 12px;
   padding: 0.75rem 1rem;
@@ -411,14 +411,14 @@ export default {
 }
 
 .section-title {
-  color: var(--teal-green);
+  color: var(--teal-dark);
   margin-top: 0;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  border-bottom: 2px solid var(--mint-light);
+  border-bottom: 2px solid var(--spearmint);
   padding-bottom: 0.75rem;
 }
 
@@ -477,7 +477,8 @@ export default {
 
 .day-name {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--teal-dark);
+  font-weight: 600;
 }
 
 .day-icon {
@@ -493,34 +494,37 @@ export default {
 }
 
 .day-future .day-icon {
-  color: #BBBBBB;
+  color: var(--teal-green);
+  opacity: 0.5;
 }
 
 /* Daily Goal */
 .daily-goal {
-  background-color: #f5f9fa;
+  background-color: var(--mint);
   padding: 1rem;
   border-radius: 12px;
+  box-shadow: var(--shadow-light);
 }
 
 .daily-goal h3 {
   margin-top: 0;
   margin-bottom: 0.75rem;
-  color: var(--teal-green);
+  color: var(--teal-dark);
   font-size: 1.1rem;
 }
 
 .progress-container {
   height: 10px;
-  background-color: #e0e0e0;
+  background-color: white;
   border-radius: 5px;
   margin-bottom: 1rem;
   position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, var(--teal-light), var(--teal-green));
+  background: linear-gradient(90deg, var(--teal), var(--teal-dark));
   border-radius: 5px;
   transition: width 0.5s ease;
 }
@@ -530,12 +534,12 @@ export default {
   right: 0;
   top: -1.5rem;
   font-size: 0.9rem;
-  color: var(--teal-green);
+  color: var(--teal-dark);
   font-weight: bold;
 }
 
 .btn-activity {
-  background: linear-gradient(135deg, var(--teal-light), var(--teal));
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
   color: white;
   border: none;
   border-radius: 8px;
@@ -565,7 +569,7 @@ export default {
 .leaderboard-tabs {
   display: flex;
   margin-bottom: 1.25rem;
-  background-color: #f5f9fa;
+  background-color: var(--mint);
   border-radius: 8px;
   padding: 0.3rem;
 }
@@ -577,13 +581,13 @@ export default {
   padding: 0.75rem;
   cursor: pointer;
   font-size: 0.95rem;
-  color: var(--teal-green);
+  color: var(--teal-dark);
   border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .tab-button.active {
-  background: linear-gradient(135deg, var(--teal-light), var(--teal));
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
   color: white;
   font-weight: 600;
 }
@@ -593,8 +597,8 @@ export default {
   grid-template-columns: 70px 1fr 80px;
   padding: 0.5rem 1rem;
   font-weight: 600;
-  color: var(--teal-green);
-  border-bottom: 1px solid #e0e0e0;
+  color: var(--teal-dark);
+  border-bottom: 1px solid var(--spearmint);
 }
 
 .leaderboard-item {
@@ -602,7 +606,7 @@ export default {
   grid-template-columns: 70px 1fr 80px;
   padding: 0.75rem 1rem;
   align-items: center;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--mint);
   transition: background-color 0.2s ease;
 }
 
@@ -611,7 +615,7 @@ export default {
 }
 
 .leaderboard-item:hover {
-  background-color: #f9f9f9;
+  background-color: var(--mint-light);
 }
 
 .leaderboard-item.current-user {
@@ -620,7 +624,7 @@ export default {
 }
 
 .leaderboard-item.top-three {
-  background-color: #f5f9fa;
+  background-color: var(--mint-light);
 }
 
 .medal {
@@ -644,7 +648,7 @@ export default {
   justify-content: center;
   align-items: center;
   font-weight: 600;
-  color: #555;
+  color: var(--teal-dark);
 }
 
 .user-info {
@@ -667,7 +671,7 @@ export default {
 .user-score {
   font-weight: 600;
   text-align: right;
-  color: var(--teal-green);
+  color: var(--teal-dark);
 }
 
 /* Achievements Styles */
@@ -678,19 +682,21 @@ export default {
 }
 
 .achievement-item {
-  background-color: #f5f9fa;
+  background-color: var(--mint);
   border-radius: 12px;
   padding: 1rem;
   display: flex;
   gap: 0.75rem;
-  opacity: 0.7;
+  opacity: 0.85;
   transition: all 0.3s ease;
+  border: 1px solid rgba(152, 215, 194, 0.3);
 }
 
 .achievement-unlocked {
   opacity: 1;
-  background: linear-gradient(135deg, #f5f9fa, #e6f7f8);
+  background: linear-gradient(135deg, var(--mint), var(--mint-light));
   box-shadow: 0 4px 15px rgba(22, 125, 127, 0.1);
+  border: 1px solid var(--spearmint);
 }
 
 .achievement-icon {
@@ -699,7 +705,7 @@ export default {
   align-items: center;
   width: 45px;
   height: 45px;
-  background: linear-gradient(135deg, var(--teal-light), var(--teal));
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark));
   color: white;
   border-radius: 10px;
   font-size: 1.25rem;
@@ -713,25 +719,26 @@ export default {
 .achievement-info h3 {
   margin: 0 0 0.4rem 0;
   font-size: 1rem;
-  color: var(--teal-green);
+  color: var(--teal-dark);
 }
 
 .achievement-desc {
   margin: 0 0 0.75rem 0;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--teal-green);
 }
 
 .achievement-progress {
   height: 6px;
-  background-color: #e0e0e0;
+  background-color: white;
   border-radius: 3px;
   position: relative;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .achievement-progress .progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, var(--teal-light), var(--teal));
+  background: linear-gradient(90deg, var(--teal), var(--teal-dark));
   border-radius: 3px;
 }
 
@@ -740,7 +747,7 @@ export default {
   right: 0;
   top: -1.25rem;
   font-size: 0.8rem;
-  color: var(--teal-green);
+  color: var(--teal-dark);
 }
 
 /* Responsive Design */
