@@ -2,7 +2,7 @@
   <div class="gamification-page">
     <!-- Header -->
     <header class="app-header">
-      <div class="logo-container">
+      <div class="logo-container" @click="$router.push('/')">
         <img src="/images/app_logo_no_text.png" alt="LeTo Logo" class="app-logo">
         <div class="text-container">
           <h1 class="app-title">LeTo</h1>
@@ -336,6 +336,12 @@ export default {
   gap: 1rem;
   flex-shrink: 1;
   min-width: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.02);
 }
 
 .app-logo {
