@@ -34,6 +34,7 @@ LeTo (Learn Together) is an educational platform designed to connect students fo
 - Learning style and availability management
 
 ## Screenshots
+<img width="3921" height="2334" alt="Picture2" src="https://github.com/user-attachments/assets/42ca60d8-ce44-4ca1-a05a-0d98e3493908" />
 
 
 
