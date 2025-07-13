@@ -876,7 +876,7 @@ export default {
   position: relative;
   width: 100%;
   height: auto;
-  min-height: 580px; /* Add min-height instead of fixed height */
+  min-height: 720px; /* Add min-height instead of fixed height */
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -982,8 +982,6 @@ export default {
 
 .card-body {
   padding: 1.5rem;
-  max-height: 320px;
-  overflow-y: auto;
 }
 
 .info-item {
@@ -1193,7 +1191,7 @@ export default {
   
   .card-stack {
     height: auto;
-    min-height: 500px;
+    min-height: 640px;
   }
   
   .card-header {
@@ -1260,7 +1258,7 @@ export default {
   
   .card-stack {
     height: auto;
-    min-height: 460px;
+    min-height: 580px;
   }
   
   .card-header {
@@ -1269,7 +1267,6 @@ export default {
   
   .card-body {
     padding: 1rem;
-    max-height: 260px;
   }
   
   .action-buttons {
